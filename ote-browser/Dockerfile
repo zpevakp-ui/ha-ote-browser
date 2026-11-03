@@ -7,7 +7,9 @@ LABEL org.opencontainers.image.source="https://github.com/zpevakp-ui/ha-ote-brow
 RUN apt-get update \
     && apt-get install -y --no-install-recommends nginx curl \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir -p /data
+    && mkdir -p /data /etc/opt/chrome/policies/managed /etc/chromium/policies/managed \
+    && printf '%s\n' '{"AutoSelectCertificateForUrls":["{\"pattern\":\"https://portal.ote-cr.cz\",\"filter\":{}}"]}' > /etc/opt/chrome/policies/managed/ote.json \
+    && cp /etc/opt/chrome/policies/managed/ote.json /etc/chromium/policies/managed/ote.json
 
 COPY run.sh /run.sh
 RUN chmod 0755 /run.sh

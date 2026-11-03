@@ -1,0 +1,16 @@
+name: OTE Browser (test)
+description: Persistent headless Chromium CDP browser for local OTE testing
+version: "0.1.0"
+slug: ote-browser
+url: https://github.com/zpevakp-ui/ha-ote-browser
+arch:
+  - aarch64
+  - amd64
+startup: application
+boot: manual
+init: false
+ingress: false
+ports:
+  9222/tcp: null
+ports_description:
+  9222/tcp: Chromium DevTools Protocol (internal use only)

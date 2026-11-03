@@ -1,6 +1,6 @@
 name: OTE Browser (test)
 description: Persistent headless Chromium CDP browser for local OTE testing
-version: "0.1.0"
+version: "0.1.1"
 slug: ote-browser
 url: https://github.com/zpevakp-ui/ha-ote-browser
 arch:
